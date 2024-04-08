@@ -1,4 +1,4 @@
-Assignment 2
+Bigdata Assignment 2 Questions
 Exploring User Interaction Data: PySpark vs. Pandas in Local Mode
 
 Objective
