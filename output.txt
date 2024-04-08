@@ -1,0 +1,530 @@
+
+**********
+**********> Pandas Task 1 - Load Data 
+**********
+DATA TYPES: 
+------------
+Unnamed: 0                int64
+UserID                    int64
+UserName         string[python]
+WatchedMovie               bool
+MovieGenre       string[python]
+SessionLength             int64
+LastLoginDate    datetime64[ns]
+dtype: object
+
+DATA: 
+------------
+
+|    |   Unnamed: 0 |   UserID | UserName            | WatchedMovie   | MovieGenre                                                |   SessionLength | LastLoginDate       |
+|---:|-------------:|---------:|:--------------------|:---------------|:----------------------------------------------------------|----------------:|:--------------------|
+|  0 |            0 |    34557 | Leslie Shelton      | False          | <NA>                                                      |             175 | 2012-04-30 00:00:00 |
+|  1 |            1 |    48013 | Hannah Sanders      | False          | <NA>                                                      |            1409 | 2020-05-30 00:00:00 |
+|  2 |            2 |    13230 | Christopher Torres  | True           | Adventure Drama                                           |             181 | 2009-11-25 00:00:00 |
+|  3 |            3 |    18988 | Christopher Stokes  | True           | Animation Adventure Comedy Family Fantasy Musical Romance |             179 | 2022-02-15 00:00:00 |
+|  4 |            4 |    29844 | Joel Cox            | False          | <NA>                                                      |             227 | 2012-06-09 00:00:00 |
+|  5 |            5 |    12305 | Jerry Perez         | False          | <NA>                                                      |             288 | 2015-05-10 00:00:00 |
+|  6 |            6 |    32806 | Paula Graham        | True           | Adventure Biography Drama Romance                         |            1104 | 2018-10-10 00:00:00 |
+|  7 |            7 |    18269 | George Watkins      | True           | Action Mystery Thriller                                   |             767 | 2019-08-20 00:00:00 |
+|  8 |            8 |    49081 | Alexis Robles       | True           | Action Thriller                                           |             689 | 2007-05-31 00:00:00 |
+|  9 |            9 |    37028 | Regina Aguirre      | True           | Mystery Thriller                                          |             312 | 2015-12-06 00:00:00 |
+| 10 |           10 |     3069 | Hannah Kim          | False          | <NA>                                                      |              12 | 2019-09-01 00:00:00 |
+| 11 |           11 |    30057 | Kim Little          | False          | <NA>                                                      |             499 | 2004-04-09 00:00:00 |
+| 12 |           12 |    24335 | Bryce Fowler        | False          | <NA>                                                      |             742 | 2019-12-13 00:00:00 |
+| 13 |           13 |    41663 | Amy Marshall        | True           | Drama Mystery Sci-Fi                                      |             177 | 2012-07-30 00:00:00 |
+| 14 |           14 |    11286 | Jeffrey Hickman     | False          | <NA>                                                      |             335 | 2018-12-19 00:00:00 |
+| 15 |           15 |    25286 | Rhonda Wilson       | False          | <NA>                                                      |            1010 | 2002-11-06 00:00:00 |
+| 16 |           16 |    32032 | William Ibarra      | True           | Action Mystery Thriller                                   |             605 | 2018-12-13 00:00:00 |
+| 17 |           17 |     9939 | Nathan Ward         | True           | Mystery Thriller                                          |             367 | 2002-05-15 00:00:00 |
+| 18 |           18 |    15472 | Patricia Freeman    | True           | Action Crime Drama Thriller                               |             815 | 2016-02-01 00:00:00 |
+| 19 |           19 |    37274 | Christopher Pace    | False          | <NA>                                                      |            1174 | 2001-05-26 00:00:00 |
+| 20 |           20 |    23374 | Kristy Golden       | False          | <NA>                                                      |             371 | 2004-09-16 00:00:00 |
+| 21 |           21 |    22109 | Mary Phelps         | False          | <NA>                                                      |             193 | 2007-07-18 00:00:00 |
+| 22 |           22 |     2083 | Caleb Holmes        | False          | <NA>                                                      |             539 | 2021-06-06 00:00:00 |
+| 23 |           23 |     6737 | Justin Hartman      | True           | Adventure Drama Western                                   |             842 | 2011-04-09 00:00:00 |
+| 24 |           24 |    16462 | Nicholas Clark      | True           | Action Sci-Fi                                             |             218 | 2018-03-20 00:00:00 |
+| 25 |           25 |     9185 | Shelley French      | True           | Action Adventure Drama Thriller                           |             177 | 2000-04-22 00:00:00 |
+| 26 |           26 |    43805 | Elizabeth Singleton | False          | <NA>                                                      |            1009 | 2005-03-22 00:00:00 |
+| 27 |           27 |    34664 | Brandon Glenn       | False          | <NA>                                                      |            1214 | 2006-05-31 00:00:00 |
+| 28 |           28 |    16841 | Michelle Hernandez  | True           | Action Drama War                                          |             806 | 2005-08-08 00:00:00 |
+| 29 |           29 |    39240 | Jack Carter         | True           | Comedy Romance                                            |             986 | 2008-03-02 00:00:00 |
+| 30 |           30 |    12290 | Vincent Bentley     | True           | Biography Comedy Crime Drama                              |             860 | 2022-11-26 00:00:00 |
+| 31 |           31 |    12188 | Sara Fisher         | True           | Drama Romance Sci-Fi                                      |            1096 | 2001-02-19 00:00:00 |
+| 32 |           32 |    31525 | Traci Middleton     | False          | <NA>                                                      |             661 | 2023-07-02 00:00:00 |
+| 33 |           33 |     5371 | Karen Romero        | True           | Crime Drama Thriller                                      |             184 | 2020-09-24 00:00:00 |
+| 34 |           34 |    47266 | Carlos Owens        | False          | <NA>                                                      |             894 | 2022-03-02 00:00:00 |
+| 35 |           35 |    41073 | Rachel Cox          | True           | Action Adventure Fantasy Sci-Fi                           |             858 | 2016-01-26 00:00:00 |
+| 36 |           36 |    14123 | Rachel Howard       | True           | Drama Mystery Thriller                                    |             662 | 2012-10-01 00:00:00 |
+| 37 |           37 |    32951 | Ryan Moreno         | True           | Action Crime Thriller                                     |            1196 | 2006-11-29 00:00:00 |
+| 38 |           38 |    16693 | Morgan Maynard      | True           | Action Adventure Sci-Fi                                   |             498 | 2010-10-31 00:00:00 |
+| 39 |           39 |      872 | Oscar Miller Jr.    | True           | Action Adventure                                          |            1365 | 2012-01-26 00:00:00 |
+| 40 |           40 |    21484 | Robert Blevins Jr.  | False          | <NA>                                                      |            1352 | 2005-05-03 00:00:00 |
+| 41 |           41 |     6648 | Nancy Humphrey      | True           | Action Mystery Thriller                                   |             350 | 2016-01-28 00:00:00 |
+| 42 |           42 |    12427 | Jerry Harris        | True           | Action Biography Drama History War                        |            1210 | 2005-02-08 00:00:00 |
+| 43 |           43 |    16913 | Misty Boone         | True           | Comedy Adventure Crime Music                              |             437 | 2002-09-21 00:00:00 |
+| 44 |           44 |     1292 | Casey Mitchell      | True           | Drama Music                                               |             283 | 2008-09-07 00:00:00 |
+| 45 |           45 |     3723 | Michael Edwards     | True           | Drama Mystery Thriller                                    |             985 | 2008-10-22 00:00:00 |
+| 46 |           46 |    26630 | Sara Castro         | False          | <NA>                                                      |             835 | 2018-08-19 00:00:00 |
+| 47 |           47 |    24200 | Andrew Walker       | True           | Action Adventure Crime Mystery Thriller                   |             659 | 2011-05-05 00:00:00 |
+| 48 |           48 |    36738 | Kyle Jones MD       | True           | Animation Family Fantasy Musical Romance                  |             219 | 2021-04-24 00:00:00 |
+| 49 |           49 |    45245 | Margaret Hopkins    | False          | <NA>                                                      |            1062 | 2006-12-03 00:00:00 |
+Showing first 50 rows out of 200000
+
+Pandas takes about 0.6 second to load the data (Task 1) (tested on Jupyter Notebook).
+
+**********
+**********> PySpark Task 1 - Load Data 
+**********
+root
+ |-- Index: string (nullable = true)
+ |-- UserID: integer (nullable = true)
+ |-- UserName: string (nullable = true)
+ |-- WatchedMovie: boolean (nullable = true)
+ |-- MovieGenre: string (nullable = true)
+ |-- SessionLength: integer (nullable = true)
+ |-- LastLoginDate: date (nullable = true)
+
++-----+------+-------------------+------------+---------------------------------------------------------+-------------+-------------+
+|Index|UserID|UserName           |WatchedMovie|MovieGenre                                               |SessionLength|LastLoginDate|
++-----+------+-------------------+------------+---------------------------------------------------------+-------------+-------------+
+|0    |34557 |Leslie Shelton     |false       |NULL                                                     |175          |2012-04-30   |
+|1    |48013 |Hannah Sanders     |false       |NULL                                                     |1409         |2020-05-30   |
+|2    |13230 |Christopher Torres |true        |Adventure Drama                                          |181          |2009-11-25   |
+|3    |18988 |Christopher Stokes |true        |Animation Adventure Comedy Family Fantasy Musical Romance|179          |2022-02-15   |
+|4    |29844 |Joel Cox           |false       |NULL                                                     |227          |2012-06-09   |
+|5    |12305 |Jerry Perez        |false       |NULL                                                     |288          |2015-05-10   |
+|6    |32806 |Paula Graham       |true        |Adventure Biography Drama Romance                        |1104         |2018-10-10   |
+|7    |18269 |George Watkins     |true        |Action Mystery Thriller                                  |767          |2019-08-20   |
+|8    |49081 |Alexis Robles      |true        |Action Thriller                                          |689          |2007-05-31   |
+|9    |37028 |Regina Aguirre     |true        |Mystery Thriller                                         |312          |2015-12-06   |
+|10   |3069  |Hannah Kim         |false       |NULL                                                     |12           |2019-09-01   |
+|11   |30057 |Kim Little         |false       |NULL                                                     |499          |2004-04-09   |
+|12   |24335 |Bryce Fowler       |false       |NULL                                                     |742          |2019-12-13   |
+|13   |41663 |Amy Marshall       |true        |Drama Mystery Sci-Fi                                     |177          |2012-07-30   |
+|14   |11286 |Jeffrey Hickman    |false       |NULL                                                     |335          |2018-12-19   |
+|15   |25286 |Rhonda Wilson      |false       |NULL                                                     |1010         |2002-11-06   |
+|16   |32032 |William Ibarra     |true        |Action Mystery Thriller                                  |605          |2018-12-13   |
+|17   |9939  |Nathan Ward        |true        |Mystery Thriller                                         |367          |2002-05-15   |
+|18   |15472 |Patricia Freeman   |true        |Action Crime Drama Thriller                              |815          |2016-02-01   |
+|19   |37274 |Christopher Pace   |false       |NULL                                                     |1174         |2001-05-26   |
+|20   |23374 |Kristy Golden      |false       |NULL                                                     |371          |2004-09-16   |
+|21   |22109 |Mary Phelps        |false       |NULL                                                     |193          |2007-07-18   |
+|22   |2083  |Caleb Holmes       |false       |NULL                                                     |539          |2021-06-06   |
+|23   |6737  |Justin Hartman     |true        |Adventure Drama Western                                  |842          |2011-04-09   |
+|24   |16462 |Nicholas Clark     |true        |Action Sci-Fi                                            |218          |2018-03-20   |
+|25   |9185  |Shelley French     |true        |Action Adventure Drama Thriller                          |177          |2000-04-22   |
+|26   |43805 |Elizabeth Singleton|false       |NULL                                                     |1009         |2005-03-22   |
+|27   |34664 |Brandon Glenn      |false       |NULL                                                     |1214         |2006-05-31   |
+|28   |16841 |Michelle Hernandez |true        |Action Drama War                                         |806          |2005-08-08   |
+|29   |39240 |Jack Carter        |true        |Comedy Romance                                           |986          |2008-03-02   |
+|30   |12290 |Vincent Bentley    |true        |Biography Comedy Crime Drama                             |860          |2022-11-26   |
+|31   |12188 |Sara Fisher        |true        |Drama Romance Sci-Fi                                     |1096         |2001-02-19   |
+|32   |31525 |Traci Middleton    |false       |NULL                                                     |661          |2023-07-02   |
+|33   |5371  |Karen Romero       |true        |Crime Drama Thriller                                     |184          |2020-09-24   |
+|34   |47266 |Carlos Owens       |false       |NULL                                                     |894          |2022-03-02   |
+|35   |41073 |Rachel Cox         |true        |Action Adventure Fantasy Sci-Fi                          |858          |2016-01-26   |
+|36   |14123 |Rachel Howard      |true        |Drama Mystery Thriller                                   |662          |2012-10-01   |
+|37   |32951 |Ryan Moreno        |true        |Action Crime Thriller                                    |1196         |2006-11-29   |
+|38   |16693 |Morgan Maynard     |true        |Action Adventure Sci-Fi                                  |498          |2010-10-31   |
+|39   |872   |Oscar Miller Jr.   |true        |Action Adventure                                         |1365         |2012-01-26   |
+|40   |21484 |Robert Blevins Jr. |false       |NULL                                                     |1352         |2005-05-03   |
+|41   |6648  |Nancy Humphrey     |true        |Action Mystery Thriller                                  |350          |2016-01-28   |
+|42   |12427 |Jerry Harris       |true        |Action Biography Drama History War                       |1210         |2005-02-08   |
+|43   |16913 |Misty Boone        |true        |Comedy Adventure Crime Music                             |437          |2002-09-21   |
+|44   |1292  |Casey Mitchell     |true        |Drama Music                                              |283          |2008-09-07   |
+|45   |3723  |Michael Edwards    |true        |Drama Mystery Thriller                                   |985          |2008-10-22   |
+|46   |26630 |Sara Castro        |false       |NULL                                                     |835          |2018-08-19   |
+|47   |24200 |Andrew Walker      |true        |Action Adventure Crime Mystery Thriller                  |659          |2011-05-05   |
+|48   |36738 |Kyle Jones MD      |true        |Animation Family Fantasy Musical Romance                 |219          |2021-04-24   |
+|49   |45245 |Margaret Hopkins   |false       |NULL                                                     |1062         |2006-12-03   |
++-----+------+-------------------+------------+---------------------------------------------------------+-------------+-------------+
+only showing top 50 rows
+
+Total # of rows = 200000
+
+PySpark also takes about 5.3 seconds to load the data (Task 1) (tested on Jupyter Notebook).
+PySpark performs significantly worse than Pandas to load the data.
+
+**********
+**********> Pandas Task 2 - # of Watched Moves by Genre 
+**********
+| MovieGenre                                                |   ('WatchedMovie', 'count') |
+|:----------------------------------------------------------|----------------------------:|
+| Action Adventure                                          |                        1557 |
+| Action Adventure Comedy Crime Thriller                    |                        1624 |
+| Action Adventure Crime Drama                              |                        1577 |
+| Action Adventure Crime Mystery Thriller                   |                        1643 |
+| Action Adventure Drama                                    |                        1583 |
+| Action Adventure Drama Fantasy Romance                    |                        1598 |
+| Action Adventure Drama Thriller                           |                        1603 |
+| Action Adventure Fantasy                                  |                        1582 |
+| Action Adventure Fantasy Sci-Fi                           |                        1553 |
+| Action Adventure Sci-Fi                                   |                        1598 |
+| Action Adventure Sci-Fi Thriller                          |                        1628 |
+| Action Adventure Thriller                                 |                        1583 |
+| Action Biography Drama History War                        |                        1642 |
+| Action Crime                                              |                        1565 |
+| Action Crime Drama Thriller                               |                        1580 |
+| Action Crime Fantasy Mystery Sci-Fi Thriller              |                        1506 |
+| Action Crime Thriller                                     |                        1563 |
+| Action Drama Thriller                                     |                        1553 |
+| Action Drama War                                          |                        1600 |
+| Action Mystery Sci-Fi Thriller                            |                        1609 |
+| Action Mystery Thriller                                   |                        1556 |
+| Action Sci-Fi                                             |                        1587 |
+| Action Sci-Fi Thriller                                    |                        1560 |
+| Action Thriller                                           |                        1572 |
+| Adventure Biography Drama Romance                         |                        1568 |
+| Adventure Comedy Sci-Fi                                   |                        1615 |
+| Adventure Drama                                           |                        1590 |
+| Adventure Drama History                                   |                        1616 |
+| Adventure Drama Western                                   |                        1569 |
+| Adventure Family Fantasy                                  |                        1573 |
+| Adventure Family Fantasy Mystery                          |                        1609 |
+| Adventure Family Fantasy Sci-Fi                           |                        1593 |
+| Adventure Sci-Fi                                          |                        1595 |
+| Animation Action Adventure Family                         |                        1599 |
+| Animation Adventure Comedy Family                         |                        1602 |
+| Animation Adventure Comedy Family Fantasy                 |                        1594 |
+| Animation Adventure Comedy Family Fantasy Musical Romance |                        1568 |
+| Animation Adventure Drama Family Musical                  |                        1623 |
+| Animation Family Comedy                                   |                        1579 |
+| Animation Family Fantasy Musical Romance                  |                        1549 |
+| Biography Comedy Crime Drama                              |                        1591 |
+| Biography Drama                                           |                        1554 |
+| Biography Drama History War                               |                        1569 |
+| Comedy                                                    |                        1578 |
+| Comedy Adventure Crime Music                              |                        1543 |
+| Comedy Crime Fantasy Romance                              |                        1660 |
+| Comedy Drama                                              |                        1660 |
+| Comedy Drama Music Romance                                |                        1648 |
+| Comedy Romance                                            |                        1616 |
+| Comedy Sci-Fi                                             |                        1604 |
+Showing first 50 rows out of 63
+
+Pandas takes about 0 second to query # of Watched Moves by Genre (Task 2) (tested on Jupyter Notebook).
+
+**********
+**********> PySpark Task 2 - # of Watched Moves by Genre 
+**********
++---------------------------------------------------------+-----+
+|MovieGenre                                               |count|
++---------------------------------------------------------+-----+
+|Action Adventure                                         |1557 |
+|Action Adventure Comedy Crime Thriller                   |1624 |
+|Action Adventure Crime Drama                             |1577 |
+|Action Adventure Crime Mystery Thriller                  |1643 |
+|Action Adventure Drama                                   |1583 |
+|Action Adventure Drama Fantasy Romance                   |1598 |
+|Action Adventure Drama Thriller                          |1603 |
+|Action Adventure Fantasy                                 |1582 |
+|Action Adventure Fantasy Sci-Fi                          |1553 |
+|Action Adventure Sci-Fi                                  |1598 |
+|Action Adventure Sci-Fi Thriller                         |1628 |
+|Action Adventure Thriller                                |1583 |
+|Action Biography Drama History War                       |1642 |
+|Action Crime                                             |1565 |
+|Action Crime Drama Thriller                              |1580 |
+|Action Crime Fantasy Mystery Sci-Fi Thriller             |1506 |
+|Action Crime Thriller                                    |1563 |
+|Action Drama Thriller                                    |1553 |
+|Action Drama War                                         |1600 |
+|Action Mystery Sci-Fi Thriller                           |1609 |
+|Action Mystery Thriller                                  |1556 |
+|Action Sci-Fi                                            |1587 |
+|Action Sci-Fi Thriller                                   |1560 |
+|Action Thriller                                          |1572 |
+|Adventure Biography Drama Romance                        |1568 |
+|Adventure Comedy Sci-Fi                                  |1615 |
+|Adventure Drama                                          |1590 |
+|Adventure Drama History                                  |1616 |
+|Adventure Drama Western                                  |1569 |
+|Adventure Family Fantasy                                 |1573 |
+|Adventure Family Fantasy Mystery                         |1609 |
+|Adventure Family Fantasy Sci-Fi                          |1593 |
+|Adventure Sci-Fi                                         |1595 |
+|Animation Action Adventure Family                        |1599 |
+|Animation Adventure Comedy Family                        |1602 |
+|Animation Adventure Comedy Family Fantasy                |1594 |
+|Animation Adventure Comedy Family Fantasy Musical Romance|1568 |
+|Animation Adventure Drama Family Musical                 |1623 |
+|Animation Family Comedy                                  |1579 |
+|Animation Family Fantasy Musical Romance                 |1549 |
+|Biography Comedy Crime Drama                             |1591 |
+|Biography Drama                                          |1554 |
+|Biography Drama History War                              |1569 |
+|Comedy                                                   |1578 |
+|Comedy Adventure Crime Music                             |1543 |
+|Comedy Crime Fantasy Romance                             |1660 |
+|Comedy Drama                                             |1660 |
+|Comedy Drama Music Romance                               |1648 |
+|Comedy Romance                                           |1616 |
+|Comedy Sci-Fi                                            |1604 |
++---------------------------------------------------------+-----+
+only showing top 50 rows
+
+Total # of rows = 63
+
+PySpark however takes about 1.0 seconds to query # of Watched Moves by Genre (Task 2) (tested on Jupyter Notebook).
+Which means Pandas performs better on Task 2.
+
+**********
+**********> Pandas Task 3 - # of Users in Last 3 Months 
+**********
+1878
+Pandas takes about 0 second to query # of Users in Last 3 Months (Task 3) (tested on Jupyter Notebook).
+
+**********
+**********> PySpark Task 3 - # of Users in Last 3 Months 
+**********
+1878
+PySpark takes about 0.8 second to query # of Users in Last 3 Months (Task 3) (tested on Jupyter Notebook).
+So Pandas performs better on Task 3.
+
+**********
+**********> Pandas Task 4 - Avg Session length for avid movie watchers 
+**********
+|   UserID |   ('WatchedMovie', 'count') |   ('SessionLength', 'mean') |
+|---------:|----------------------------:|----------------------------:|
+|        2 |                           3 |                     839     |
+|        6 |                           4 |                     783.75  |
+|        9 |                           3 |                     788.667 |
+|       13 |                           4 |                     998.5   |
+|       17 |                           3 |                     979.667 |
+|       20 |                           4 |                     737     |
+|       21 |                           3 |                     702     |
+|       22 |                           5 |                     490     |
+|       26 |                           3 |                     350.667 |
+|       31 |                           5 |                     447.8   |
+|       32 |                           3 |                     695.333 |
+|       35 |                           3 |                     840.667 |
+|       36 |                           4 |                     454.75  |
+|       37 |                           3 |                     762.667 |
+|       38 |                           4 |                     631.75  |
+|       40 |                           4 |                     717.5   |
+|       41 |                           3 |                     484.667 |
+|       44 |                           3 |                     419.667 |
+|       48 |                           3 |                     125     |
+|       50 |                           4 |                     764.75  |
+|       52 |                           3 |                     607.333 |
+|       59 |                           3 |                     789.667 |
+|       68 |                           3 |                     771     |
+|       72 |                           3 |                     695.667 |
+|       74 |                           4 |                    1012.75  |
+|       75 |                           3 |                     819.667 |
+|       79 |                           3 |                     651.667 |
+|       81 |                           3 |                     160.667 |
+|       82 |                           4 |                     597     |
+|       87 |                           5 |                     472     |
+|       92 |                           3 |                     316     |
+|       93 |                           3 |                     710.667 |
+|       96 |                           3 |                     576.667 |
+|      101 |                           5 |                     452.8   |
+|      104 |                           3 |                     976.333 |
+|      109 |                           4 |                     864.75  |
+|      111 |                           3 |                     409.667 |
+|      115 |                           3 |                     530     |
+|      120 |                           3 |                     335.667 |
+|      122 |                           3 |                     503.333 |
+|      123 |                           3 |                     727     |
+|      125 |                           7 |                     653.857 |
+|      126 |                           5 |                     932.6   |
+|      127 |                           4 |                     558.75  |
+|      128 |                           7 |                     828.857 |
+|      129 |                           5 |                     741.4   |
+|      131 |                           3 |                     772     |
+|      138 |                           3 |                     973.333 |
+|      139 |                           5 |                     488.6   |
+|      140 |                           5 |                    1003     |
+Showing first 50 rows out of 16083
+
+Pandas takes about 0 second to query Avg Session length for avid movie watchers (Task 4) (tested on Jupyter Notebook).
+
+**********
+**********> PySpark Task 4 - Avg Session length for avid movie watchers 
+**********
++------+-------------------+------------------+
+|UserID|count(WatchedMovie)|avg(SessionLength)|
++------+-------------------+------------------+
+|2     |3                  |839.0             |
+|6     |4                  |783.75            |
+|9     |3                  |788.6666666666666 |
+|13    |4                  |998.5             |
+|17    |3                  |979.6666666666666 |
+|20    |4                  |737.0             |
+|21    |3                  |702.0             |
+|22    |5                  |490.0             |
+|26    |3                  |350.6666666666667 |
+|31    |5                  |447.8             |
+|32    |3                  |695.3333333333334 |
+|35    |3                  |840.6666666666666 |
+|36    |4                  |454.75            |
+|37    |3                  |762.6666666666666 |
+|38    |4                  |631.75            |
+|40    |4                  |717.5             |
+|41    |3                  |484.6666666666667 |
+|44    |3                  |419.6666666666667 |
+|48    |3                  |125.0             |
+|50    |4                  |764.75            |
+|52    |3                  |607.3333333333334 |
+|59    |3                  |789.6666666666666 |
+|68    |3                  |771.0             |
+|72    |3                  |695.6666666666666 |
+|74    |4                  |1012.75           |
+|75    |3                  |819.6666666666666 |
+|79    |3                  |651.6666666666666 |
+|81    |3                  |160.66666666666666|
+|82    |4                  |597.0             |
+|87    |5                  |472.0             |
+|92    |3                  |316.0             |
+|93    |3                  |710.6666666666666 |
+|96    |3                  |576.6666666666666 |
+|101   |5                  |452.8             |
+|104   |3                  |976.3333333333334 |
+|109   |4                  |864.75            |
+|111   |3                  |409.6666666666667 |
+|115   |3                  |530.0             |
+|120   |3                  |335.6666666666667 |
+|122   |3                  |503.3333333333333 |
+|123   |3                  |727.0             |
+|125   |7                  |653.8571428571429 |
+|126   |5                  |932.6             |
+|127   |4                  |558.75            |
+|128   |7                  |828.8571428571429 |
+|129   |5                  |741.4             |
+|131   |3                  |772.0             |
+|138   |3                  |973.3333333333334 |
+|139   |5                  |488.6             |
+|140   |5                  |1003.0            |
++------+-------------------+------------------+
+only showing top 50 rows
+
+Total # of rows = 16083
+
+PySpark takes about 0.6 second to query Avg Session length for avid movie watchers (Task 4) (tested on Jupyter Notebook).
+Here, Pandas performs better on Task 4.
+
+**********
+**********> Pandas Task 5 - # of Days Since Last Login 
+**********
+|    |   Unnamed: 0 |   UserID | UserName            | WatchedMovie   | MovieGenre                                                |   SessionLength | LastLoginDate       |   DaysSinceLastLogin |
+|---:|-------------:|---------:|:--------------------|:---------------|:----------------------------------------------------------|----------------:|:--------------------|---------------------:|
+|  0 |            0 |    34557 | Leslie Shelton      | False          | <NA>                                                      |             175 | 2012-04-30 00:00:00 |                 4360 |
+|  1 |            1 |    48013 | Hannah Sanders      | False          | <NA>                                                      |            1409 | 2020-05-30 00:00:00 |                 1408 |
+|  2 |            2 |    13230 | Christopher Torres  | True           | Adventure Drama                                           |             181 | 2009-11-25 00:00:00 |                 5247 |
+|  3 |            3 |    18988 | Christopher Stokes  | True           | Animation Adventure Comedy Family Fantasy Musical Romance |             179 | 2022-02-15 00:00:00 |                  782 |
+|  4 |            4 |    29844 | Joel Cox            | False          | <NA>                                                      |             227 | 2012-06-09 00:00:00 |                 4320 |
+|  5 |            5 |    12305 | Jerry Perez         | False          | <NA>                                                      |             288 | 2015-05-10 00:00:00 |                 3255 |
+|  6 |            6 |    32806 | Paula Graham        | True           | Adventure Biography Drama Romance                         |            1104 | 2018-10-10 00:00:00 |                 2006 |
+|  7 |            7 |    18269 | George Watkins      | True           | Action Mystery Thriller                                   |             767 | 2019-08-20 00:00:00 |                 1692 |
+|  8 |            8 |    49081 | Alexis Robles       | True           | Action Thriller                                           |             689 | 2007-05-31 00:00:00 |                 6156 |
+|  9 |            9 |    37028 | Regina Aguirre      | True           | Mystery Thriller                                          |             312 | 2015-12-06 00:00:00 |                 3045 |
+| 10 |           10 |     3069 | Hannah Kim          | False          | <NA>                                                      |              12 | 2019-09-01 00:00:00 |                 1680 |
+| 11 |           11 |    30057 | Kim Little          | False          | <NA>                                                      |             499 | 2004-04-09 00:00:00 |                 7303 |
+| 12 |           12 |    24335 | Bryce Fowler        | False          | <NA>                                                      |             742 | 2019-12-13 00:00:00 |                 1577 |
+| 13 |           13 |    41663 | Amy Marshall        | True           | Drama Mystery Sci-Fi                                      |             177 | 2012-07-30 00:00:00 |                 4269 |
+| 14 |           14 |    11286 | Jeffrey Hickman     | False          | <NA>                                                      |             335 | 2018-12-19 00:00:00 |                 1936 |
+| 15 |           15 |    25286 | Rhonda Wilson       | False          | <NA>                                                      |            1010 | 2002-11-06 00:00:00 |                 7823 |
+| 16 |           16 |    32032 | William Ibarra      | True           | Action Mystery Thriller                                   |             605 | 2018-12-13 00:00:00 |                 1942 |
+| 17 |           17 |     9939 | Nathan Ward         | True           | Mystery Thriller                                          |             367 | 2002-05-15 00:00:00 |                 7998 |
+| 18 |           18 |    15472 | Patricia Freeman    | True           | Action Crime Drama Thriller                               |             815 | 2016-02-01 00:00:00 |                 2988 |
+| 19 |           19 |    37274 | Christopher Pace    | False          | <NA>                                                      |            1174 | 2001-05-26 00:00:00 |                 8352 |
+| 20 |           20 |    23374 | Kristy Golden       | False          | <NA>                                                      |             371 | 2004-09-16 00:00:00 |                 7143 |
+| 21 |           21 |    22109 | Mary Phelps         | False          | <NA>                                                      |             193 | 2007-07-18 00:00:00 |                 6108 |
+| 22 |           22 |     2083 | Caleb Holmes        | False          | <NA>                                                      |             539 | 2021-06-06 00:00:00 |                 1036 |
+| 23 |           23 |     6737 | Justin Hartman      | True           | Adventure Drama Western                                   |             842 | 2011-04-09 00:00:00 |                 4747 |
+| 24 |           24 |    16462 | Nicholas Clark      | True           | Action Sci-Fi                                             |             218 | 2018-03-20 00:00:00 |                 2210 |
+| 25 |           25 |     9185 | Shelley French      | True           | Action Adventure Drama Thriller                           |             177 | 2000-04-22 00:00:00 |                 8751 |
+| 26 |           26 |    43805 | Elizabeth Singleton | False          | <NA>                                                      |            1009 | 2005-03-22 00:00:00 |                 6956 |
+| 27 |           27 |    34664 | Brandon Glenn       | False          | <NA>                                                      |            1214 | 2006-05-31 00:00:00 |                 6521 |
+| 28 |           28 |    16841 | Michelle Hernandez  | True           | Action Drama War                                          |             806 | 2005-08-08 00:00:00 |                 6817 |
+| 29 |           29 |    39240 | Jack Carter         | True           | Comedy Romance                                            |             986 | 2008-03-02 00:00:00 |                 5880 |
+| 30 |           30 |    12290 | Vincent Bentley     | True           | Biography Comedy Crime Drama                              |             860 | 2022-11-26 00:00:00 |                  498 |
+| 31 |           31 |    12188 | Sara Fisher         | True           | Drama Romance Sci-Fi                                      |            1096 | 2001-02-19 00:00:00 |                 8448 |
+| 32 |           32 |    31525 | Traci Middleton     | False          | <NA>                                                      |             661 | 2023-07-02 00:00:00 |                  280 |
+| 33 |           33 |     5371 | Karen Romero        | True           | Crime Drama Thriller                                      |             184 | 2020-09-24 00:00:00 |                 1291 |
+| 34 |           34 |    47266 | Carlos Owens        | False          | <NA>                                                      |             894 | 2022-03-02 00:00:00 |                  767 |
+| 35 |           35 |    41073 | Rachel Cox          | True           | Action Adventure Fantasy Sci-Fi                           |             858 | 2016-01-26 00:00:00 |                 2994 |
+| 36 |           36 |    14123 | Rachel Howard       | True           | Drama Mystery Thriller                                    |             662 | 2012-10-01 00:00:00 |                 4206 |
+| 37 |           37 |    32951 | Ryan Moreno         | True           | Action Crime Thriller                                     |            1196 | 2006-11-29 00:00:00 |                 6339 |
+| 38 |           38 |    16693 | Morgan Maynard      | True           | Action Adventure Sci-Fi                                   |             498 | 2010-10-31 00:00:00 |                 4907 |
+| 39 |           39 |      872 | Oscar Miller Jr.    | True           | Action Adventure                                          |            1365 | 2012-01-26 00:00:00 |                 4455 |
+| 40 |           40 |    21484 | Robert Blevins Jr.  | False          | <NA>                                                      |            1352 | 2005-05-03 00:00:00 |                 6914 |
+| 41 |           41 |     6648 | Nancy Humphrey      | True           | Action Mystery Thriller                                   |             350 | 2016-01-28 00:00:00 |                 2992 |
+| 42 |           42 |    12427 | Jerry Harris        | True           | Action Biography Drama History War                        |            1210 | 2005-02-08 00:00:00 |                 6998 |
+| 43 |           43 |    16913 | Misty Boone         | True           | Comedy Adventure Crime Music                              |             437 | 2002-09-21 00:00:00 |                 7869 |
+| 44 |           44 |     1292 | Casey Mitchell      | True           | Drama Music                                               |             283 | 2008-09-07 00:00:00 |                 5691 |
+| 45 |           45 |     3723 | Michael Edwards     | True           | Drama Mystery Thriller                                    |             985 | 2008-10-22 00:00:00 |                 5646 |
+| 46 |           46 |    26630 | Sara Castro         | False          | <NA>                                                      |             835 | 2018-08-19 00:00:00 |                 2058 |
+| 47 |           47 |    24200 | Andrew Walker       | True           | Action Adventure Crime Mystery Thriller                   |             659 | 2011-05-05 00:00:00 |                 4721 |
+| 48 |           48 |    36738 | Kyle Jones MD       | True           | Animation Family Fantasy Musical Romance                  |             219 | 2021-04-24 00:00:00 |                 1079 |
+| 49 |           49 |    45245 | Margaret Hopkins    | False          | <NA>                                                      |            1062 | 2006-12-03 00:00:00 |                 6335 |
+Showing first 50 rows out of 200000
+
+Pandas takes about 0 second to compute # of Days Since Last Login and add as new column (Task 5) (tested on Jupyter Notebook).
+
+**********
+**********> PySpark Task 5 - # of Days Since Last Login 
+**********
++-----+------+-------------------+------------+---------------------------------------------------------+-------------+-------------+------------------+
+|Index|UserID|UserName           |WatchedMovie|MovieGenre                                               |SessionLength|LastLoginDate|DaysSinceLastLogin|
++-----+------+-------------------+------------+---------------------------------------------------------+-------------+-------------+------------------+
+|0    |34557 |Leslie Shelton     |false       |NULL                                                     |175          |2012-04-30   |4360              |
+|1    |48013 |Hannah Sanders     |false       |NULL                                                     |1409         |2020-05-30   |1408              |
+|2    |13230 |Christopher Torres |true        |Adventure Drama                                          |181          |2009-11-25   |5247              |
+|3    |18988 |Christopher Stokes |true        |Animation Adventure Comedy Family Fantasy Musical Romance|179          |2022-02-15   |782               |
+|4    |29844 |Joel Cox           |false       |NULL                                                     |227          |2012-06-09   |4320              |
+|5    |12305 |Jerry Perez        |false       |NULL                                                     |288          |2015-05-10   |3255              |
+|6    |32806 |Paula Graham       |true        |Adventure Biography Drama Romance                        |1104         |2018-10-10   |2006              |
+|7    |18269 |George Watkins     |true        |Action Mystery Thriller                                  |767          |2019-08-20   |1692              |
+|8    |49081 |Alexis Robles      |true        |Action Thriller                                          |689          |2007-05-31   |6156              |
+|9    |37028 |Regina Aguirre     |true        |Mystery Thriller                                         |312          |2015-12-06   |3045              |
+|10   |3069  |Hannah Kim         |false       |NULL                                                     |12           |2019-09-01   |1680              |
+|11   |30057 |Kim Little         |false       |NULL                                                     |499          |2004-04-09   |7303              |
+|12   |24335 |Bryce Fowler       |false       |NULL                                                     |742          |2019-12-13   |1577              |
+|13   |41663 |Amy Marshall       |true        |Drama Mystery Sci-Fi                                     |177          |2012-07-30   |4269              |
+|14   |11286 |Jeffrey Hickman    |false       |NULL                                                     |335          |2018-12-19   |1936              |
+|15   |25286 |Rhonda Wilson      |false       |NULL                                                     |1010         |2002-11-06   |7823              |
+|16   |32032 |William Ibarra     |true        |Action Mystery Thriller                                  |605          |2018-12-13   |1942              |
+|17   |9939  |Nathan Ward        |true        |Mystery Thriller                                         |367          |2002-05-15   |7998              |
+|18   |15472 |Patricia Freeman   |true        |Action Crime Drama Thriller                              |815          |2016-02-01   |2988              |
+|19   |37274 |Christopher Pace   |false       |NULL                                                     |1174         |2001-05-26   |8352              |
+|20   |23374 |Kristy Golden      |false       |NULL                                                     |371          |2004-09-16   |7143              |
+|21   |22109 |Mary Phelps        |false       |NULL                                                     |193          |2007-07-18   |6108              |
+|22   |2083  |Caleb Holmes       |false       |NULL                                                     |539          |2021-06-06   |1036              |
+|23   |6737  |Justin Hartman     |true        |Adventure Drama Western                                  |842          |2011-04-09   |4747              |
+|24   |16462 |Nicholas Clark     |true        |Action Sci-Fi                                            |218          |2018-03-20   |2210              |
+|25   |9185  |Shelley French     |true        |Action Adventure Drama Thriller                          |177          |2000-04-22   |8751              |
+|26   |43805 |Elizabeth Singleton|false       |NULL                                                     |1009         |2005-03-22   |6956              |
+|27   |34664 |Brandon Glenn      |false       |NULL                                                     |1214         |2006-05-31   |6521              |
+|28   |16841 |Michelle Hernandez |true        |Action Drama War                                         |806          |2005-08-08   |6817              |
+|29   |39240 |Jack Carter        |true        |Comedy Romance                                           |986          |2008-03-02   |5880              |
+|30   |12290 |Vincent Bentley    |true        |Biography Comedy Crime Drama                             |860          |2022-11-26   |498               |
+|31   |12188 |Sara Fisher        |true        |Drama Romance Sci-Fi                                     |1096         |2001-02-19   |8448              |
+|32   |31525 |Traci Middleton    |false       |NULL                                                     |661          |2023-07-02   |280               |
+|33   |5371  |Karen Romero       |true        |Crime Drama Thriller                                     |184          |2020-09-24   |1291              |
+|34   |47266 |Carlos Owens       |false       |NULL                                                     |894          |2022-03-02   |767               |
+|35   |41073 |Rachel Cox         |true        |Action Adventure Fantasy Sci-Fi                          |858          |2016-01-26   |2994              |
+|36   |14123 |Rachel Howard      |true        |Drama Mystery Thriller                                   |662          |2012-10-01   |4206              |
+|37   |32951 |Ryan Moreno        |true        |Action Crime Thriller                                    |1196         |2006-11-29   |6339              |
+|38   |16693 |Morgan Maynard     |true        |Action Adventure Sci-Fi                                  |498          |2010-10-31   |4907              |
+|39   |872   |Oscar Miller Jr.   |true        |Action Adventure                                         |1365         |2012-01-26   |4455              |
+|40   |21484 |Robert Blevins Jr. |false       |NULL                                                     |1352         |2005-05-03   |6914              |
+|41   |6648  |Nancy Humphrey     |true        |Action Mystery Thriller                                  |350          |2016-01-28   |2992              |
+|42   |12427 |Jerry Harris       |true        |Action Biography Drama History War                       |1210         |2005-02-08   |6998              |
+|43   |16913 |Misty Boone        |true        |Comedy Adventure Crime Music                             |437          |2002-09-21   |7869              |
+|44   |1292  |Casey Mitchell     |true        |Drama Music                                              |283          |2008-09-07   |5691              |
+|45   |3723  |Michael Edwards    |true        |Drama Mystery Thriller                                   |985          |2008-10-22   |5646              |
+|46   |26630 |Sara Castro        |false       |NULL                                                     |835          |2018-08-19   |2058              |
+|47   |24200 |Andrew Walker      |true        |Action Adventure Crime Mystery Thriller                  |659          |2011-05-05   |4721              |
+|48   |36738 |Kyle Jones MD      |true        |Animation Family Fantasy Musical Romance                 |219          |2021-04-24   |1079              |
+|49   |45245 |Margaret Hopkins   |false       |NULL                                                     |1062         |2006-12-03   |6335              |
++-----+------+-------------------+------------+---------------------------------------------------------+-------------+-------------+------------------+
+only showing top 50 rows
+
+Total # of rows = 200000
+
+PySpark takes about 0.1 second to compute # of Days Since Last Login and add as new column (Task 5) (tested on Jupyter Notebook).
+So Pandas performs faster on Task 5.
+
+Overall, we can say that for this dataset, Pandas performs better than PySpark.
